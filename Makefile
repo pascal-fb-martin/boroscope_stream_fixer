@@ -17,5 +17,13 @@ $(BIN): $(OBJ)
 
 .PHONY: clean
 
+install:
+	cp bsf /usr/local/bin/bsf
+	cp boroscope /usr/local/bin/boroscope
+	chmod 755 /usr/local/bin/boroscope /usr/local/bin/bsf
+
+uninstall:
+	rm -f /usr/local/bin/bsf /usr/local/bin/boroscope
+
 clean:
 	rm -f $(BIN) *.o   
