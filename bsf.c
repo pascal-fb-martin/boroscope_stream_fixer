@@ -253,7 +253,7 @@ int main(int argc, char **argv)
 {
     int opt;
     struct fd_stream in, out;
-    char *in_str, *out_str;
+    char *in_str = NULL, *out_str = NULL;
     int log_frames = 0;
     int c;
     int match_index = 0;
@@ -374,6 +374,7 @@ int main(int argc, char **argv)
                 {
                     putc(buf[i], out.fd);
                 };
+                fflush (out.fd);
 
                 // Read in end tag;
 
